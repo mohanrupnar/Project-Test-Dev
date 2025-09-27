@@ -1,0 +1,143 @@
+/* CSS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.kanban-column,
+.scrum-column {
+    min-height: 200px;
+}
+
+.kanban-card,
+.scrum-card {
+    cursor: grab;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.kanban-card:hover,
+.scrum-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.kanban-card:active,
+.scrum-card:active {
+    cursor: grabbing;
+    transform: scale(1.03);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom scrollbar */
+.kanban-column::-webkit-scrollbar,
+.scrum-column::-webkit-scrollbar {
+    width: 8px;
+}
+
+.kanban-column::-webkit-scrollbar-track,
+.scrum-column::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-radius: 10px;
+}
+
+.kanban-column::-webkit-scrollbar-thumb,
+.scrum-column::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+.kanban-column::-webkit-scrollbar-thumb:hover,
+.scrum-column::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Light & Dark Mode */
+.light .bg-container {
+    background-color: #f3f4f6;
+}
+
+.dark .bg-container {
+    background-color: #1a2033;
+}
+
+.light .text-primary {
+    color: #1f2937;
+}
+
+.dark .text-primary {
+    color: #e0e7ff;
+}
+
+.light .bg-card {
+    background-color: white;
+}
+
+.dark .bg-card {
+    background-color: #2a324b;
+}
+
+.light .bg-column {
+    background-color: #e5e7eb;
+}
+
+.dark .bg-column {
+    background-color: #3a4563;
+}
+
+.light .text-secondary {
+    color: #6b7280;
+}
+
+.dark .text-secondary {
+    color: #b0b7c8;
+}
+
+.light .bg-button {
+    background-color: #6a49db;
+}
+
+.dark .bg-button {
+    background-color: #8b5cf6;
+}
+
+.light .bg-button:hover {
+    background-color: #5d3cd1;
+}
+
+.dark .bg-button:hover {
+    background-color: #7c4af0;
+}
+
+/* Modal specific styles */
+.modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #2a324b, #3a4563);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
